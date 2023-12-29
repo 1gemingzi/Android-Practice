@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import practice.com.androidpractice.ui.calendar.CalendarActivity;
+import practice.com.androidpractice.ui.fragment.FragmentActivity;
 import practice.com.androidpractice.ui.listview.ListViewActivity;
 import practice.com.androidpractice.ui.recycleview.RecycleviewActivity;
 
@@ -39,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button button4 = findViewById(R.id.button4);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FragmentActivity.class);
                 startActivity(intent);
             }
         });

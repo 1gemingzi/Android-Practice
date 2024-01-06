@@ -23,5 +23,7 @@
         </activity>
         <activity android:name=".ui.fragment.FragmentActivity">
         </activity>
+        <activity android:name=".ui.viewpager.ViewPagerActivity">
+        </activity>
     </application>
 </manifest>

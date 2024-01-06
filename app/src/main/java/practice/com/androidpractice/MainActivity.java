@@ -10,6 +10,7 @@ import practice.com.androidpractice.ui.calendar.CalendarActivity;
 import practice.com.androidpractice.ui.fragment.FragmentActivity;
 import practice.com.androidpractice.ui.listview.ListViewActivity;
 import practice.com.androidpractice.ui.recycleview.RecycleviewActivity;
+import practice.com.androidpractice.ui.viewpager.ViewPagerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,6 +50,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, FragmentActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button button5 = findViewById(R.id.button5);
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewPagerActivity.class);
                 startActivity(intent);
             }
         });

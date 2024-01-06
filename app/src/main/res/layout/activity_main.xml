@@ -19,5 +19,9 @@
             android:text="fragment"
             android:id="@+id/button4"
             android:layout_height="wrap_content"/>
+    <Button android:layout_width="match_parent"
+            android:text="viewpager"
+            android:id="@+id/button5"
+            android:layout_height="wrap_content"/>
 
 </LinearLayout>

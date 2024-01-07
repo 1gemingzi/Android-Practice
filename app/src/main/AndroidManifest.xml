@@ -29,5 +29,7 @@
         </activity>
         <activity android:name=".network.http.NetworkActivity">
         </activity>
+        <activity android:name=".ui.dialog.DialogActivity">
+        </activity>
     </application>
 </manifest>

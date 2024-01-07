@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import practice.com.androidpractice.network.http.NetworkActivity;
 import practice.com.androidpractice.ui.calendar.CalendarActivity;
+import practice.com.androidpractice.ui.dialog.DialogActivity;
 import practice.com.androidpractice.ui.fragment.FragmentActivity;
 import practice.com.androidpractice.ui.listview.ListViewActivity;
 import practice.com.androidpractice.ui.recycleview.RecycleviewActivity;
@@ -69,6 +70,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, NetworkActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button button7 = findViewById(R.id.button7);
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DialogActivity.class);
                 startActivity(intent);
             }
         });

@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+              android:orientation="horizontal"
+              android:id="@+id/screen"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-    <fragment android:layout_width="match_parent"
-              android:id="@+id/myfragment"
-              android:layout_weight="0.5"
-              android:name="practice.com.androidpractice.ui.fragment.MyFragment"
-              android:layout_height="match_parent">
-    </fragment>
+    <LinearLayout android:layout_width="wrap_content"
+                  android:orientation="vertical"
+                  android:id="@+id/testFocus"
+                  android:layout_height="match_parent">
+        <EditText android:layout_width="wrap_content"
+                  android:id="@+id/text1"
+                  android:text="test_one"
+                  android:layout_height="wrap_content"/>
+        <EditText android:layout_width="wrap_content"
+                  android:id="@+id/text2"
+                  android:text="text_two"
+                  android:layout_height="wrap_content"/>
+    </LinearLayout>
     <FrameLayout android:layout_width="match_parent"
                  android:layout_weight="0.5"
                  android:id="@+id/frameContent"
                  android:layout_height="match_parent">
         <TextView android:layout_width="match_parent"
-                  android:text="this will be replaced"
                   android:layout_height="match_parent"/>
     </FrameLayout>
-    <Button android:layout_width="wrap_content"
-            android:text="layout"
-            android:id="@+id/fragment_button"
-            android:layout_height="wrap_content"/>
 </LinearLayout>

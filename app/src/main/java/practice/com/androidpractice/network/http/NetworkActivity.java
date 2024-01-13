@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import practice.com.androidpractice.R;
+import practice.com.androidpractice.network.connectivity.ConnectivityServiceTest;
 
 public class NetworkActivity extends Activity {
 
@@ -94,6 +95,14 @@ public class NetworkActivity extends Activity {
 
                     }
                 }).start();
+            }
+        });
+
+        Button button3 = findViewById(R.id.networkrequest);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ConnectivityServiceTest.listenNetwork(NetworkActivity.this);
             }
         });
 

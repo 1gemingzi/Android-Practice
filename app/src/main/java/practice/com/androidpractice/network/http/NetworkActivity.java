@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import practice.com.androidpractice.R;
 
 public class NetworkActivity extends Activity {
@@ -34,5 +35,67 @@ public class NetworkActivity extends Activity {
                 }).start();
             }
         });
+
+        Button button1 = findViewById(R.id.okhttptest);
+        final TextView textView1 = findViewById(R.id.okhttpText);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        final String text = OkHttpTest.request();
+                        Log.d("test", text.substring(0, 3));
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                textView1.setText(text);
+                            }
+                        });
+
+                    }
+                }).start();
+            }
+        });
+
+        Button button2 = findViewById(R.id.okhttptest1);
+        final TextView textView2 = findViewById(R.id.okhttpText1);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        OkHttpTest.getNetData("http://www.baidu.com", new OkHttpTest.okCallback() {
+                            @Override
+                            public void onFaile(String s) {
+                                final String error = s;
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG);
+                                    }
+                                });
+                            }
+
+                            @Override
+                            public void onSuccess(String s) {
+                                final String text = s;
+                                Log.d("test", text.substring(0, 3));
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        textView2.setText(text);
+                                    }
+                                });
+                            }
+                        });
+
+
+                    }
+                }).start();
+            }
+        });
+
     }
 }

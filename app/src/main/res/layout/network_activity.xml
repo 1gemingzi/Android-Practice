@@ -10,4 +10,18 @@
     <TextView android:layout_width="wrap_content"
               android:id="@+id/httpText"
               android:layout_height="wrap_content"/>
+    <Button android:layout_width="match_parent"
+            android:text="okhttp"
+            android:id="@+id/okhttptest"
+            android:layout_height="wrap_content"/>
+    <TextView android:layout_width="wrap_content"
+              android:id="@+id/okhttpText"
+              android:layout_height="wrap_content"/>
+    <Button android:layout_width="match_parent"
+            android:text="okhttp_getdata"
+            android:id="@+id/okhttptest1"
+            android:layout_height="wrap_content"/>
+    <TextView android:layout_width="wrap_content"
+              android:id="@+id/okhttpText1"
+              android:layout_height="wrap_content"/>
 </LinearLayout>

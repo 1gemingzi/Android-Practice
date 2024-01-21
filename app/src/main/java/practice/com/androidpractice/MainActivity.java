@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import practice.com.androidpractice.network.http.NetworkActivity;
+import practice.com.androidpractice.project.BookInfoActivity;
 import practice.com.androidpractice.ui.calendar.CalendarActivity;
 import practice.com.androidpractice.ui.dialog.DialogActivity;
 import practice.com.androidpractice.ui.fragment.FragmentActivity;
@@ -79,6 +80,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, DialogActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button button8 = findViewById(R.id.button8);
+        button8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BookInfoActivity.class);
                 startActivity(intent);
             }
         });

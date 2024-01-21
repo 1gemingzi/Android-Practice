@@ -31,5 +31,9 @@
             android:text="dialog"
             android:id="@+id/button7"
             android:layout_height="wrap_content"/>
+    <Button android:layout_width="match_parent"
+            android:text="bookinfo"
+            android:id="@+id/button8"
+            android:layout_height="wrap_content"/>
 
 </LinearLayout>

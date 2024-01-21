@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:divider="@drawable/divider"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <TextView android:layout_width="wrap_content"
+              android:text="设置封面书籍"
+              android:layout_gravity="center"
+              android:layout_height="wrap_content"/>
+    <TextView android:layout_width="wrap_content"
+              android:text="拍照"
+              android:id="@+id/photo"
+              android:layout_gravity="center"
+              android:textColor="@color/colorPrimary"
+              android:layout_height="wrap_content"/>
+    <TextView android:layout_width="wrap_content"
+              android:text="相册"
+              android:id="@+id/album"
+              android:layout_gravity="center"
+              android:textColor="@color/colorPrimary"
+              android:layout_height="wrap_content"/>
+</LinearLayout>

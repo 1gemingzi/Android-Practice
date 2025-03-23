@@ -3,9 +3,19 @@ package practice.com.androidpractice;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import practice.com.androidpractice.network.http.NetworkActivity;
 import practice.com.androidpractice.project.BookInfoActivity;
 import practice.com.androidpractice.ui.calendar.CalendarActivity;
@@ -17,81 +27,32 @@ import practice.com.androidpractice.ui.viewpager.ViewPagerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    private NavController navController;
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(R.layout.activity_main);
-        Button button = findViewById(R.id.button1);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ListViewActivity.class);
-                startActivity(intent);
-            }
-        });
+        setContentView(R.layout.activity_main_new);
 
-        Button button2 = findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RecycleviewActivity.class);
-                startActivity(intent);
-            }
-        });
+        // 获取 NavController
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        navController = navHostFragment.getNavController();
 
-        Button button3 = findViewById(R.id.button3);
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
-                startActivity(intent);
-            }
-        });
+        // 绑定底部导航栏
 
-        Button button4 = findViewById(R.id.button4);
-        button4.setOnClickListener(new View.OnClickListener() {
+        BottomNavigationView view = (BottomNavigationView) findViewById(R.id.bottom_nav);
+        NavigationUI.setupWithNavController(view, navController);
+        view.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, FragmentActivity.class);
-                startActivity(intent);
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                NavigationUI.onNavDestinationSelected(item, navController);
+                return true;
             }
         });
+    }
 
-        Button button5 = findViewById(R.id.button5);
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ViewPagerActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        Button button6 = findViewById(R.id.button6);
-        button6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, NetworkActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        Button button7 = findViewById(R.id.button7);
-        button7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, DialogActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        Button button8 = findViewById(R.id.button8);
-        button8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, BookInfoActivity.class);
-                startActivity(intent);
-            }
-        });
+    @Override
+    public boolean onSupportNavigateUp() {
+        return navController.navigateUp() || super.onSupportNavigateUp();
     }
 
 }

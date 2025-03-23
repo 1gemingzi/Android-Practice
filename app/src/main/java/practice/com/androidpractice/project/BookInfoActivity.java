@@ -17,9 +17,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.FileProvider;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
@@ -38,12 +38,8 @@ public class BookInfoActivity extends Activity {
     private View.OnClickListener listener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.arrow_back:
-                    finish();
-                    break;
-
-
+            if (v.getId() == R.id.arrow_back) {
+                finish();
             }
         }
     };

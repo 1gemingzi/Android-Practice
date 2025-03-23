@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/blankFragment"
+    android:icon="@drawable/good1"
+    android:title="首页" />
+
+    <item
+        android:id="@+id/testFragment"
+        android:icon="@drawable/good2"
+        android:title="测试用" />
+</menu>

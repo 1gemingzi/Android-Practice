@@ -1,10 +1,13 @@
 package practice.com.androidpractice
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.Toast
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,11 +32,20 @@ class BlankFragment : Fragment() {
         }
     }
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        val view = inflater.inflate(R.layout.fragment_blank, container, false)
+        val mYImage = view.findViewById<ImageView>(R.id.myImage)
+
+        mYImage.focusable = View.FOCUSABLE
+        mYImage.setOnClickListener {
+            Toast.makeText(context, "test", Toast.LENGTH_LONG)
+        }
+
         return inflater.inflate(R.layout.fragment_blank, container, false)
     }
 
